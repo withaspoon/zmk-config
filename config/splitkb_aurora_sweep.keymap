@@ -46,17 +46,17 @@
         default_layer {
             bindings = <
                 &kp Q &kp W &kp F &kp P &kp B 						    &kp J &kp L &kp U &kp Y &kp BSPC
-                &kp A &kp R &hm LALT S &hm LGUI &kp T &kp G 	        &kp M &hm RGUI N &hm RALT E &kp I &kp O
-                &kp Z &kp X &kp C &kp D &kp V				            &kp K &kp H &kp CMMA &kp DOT &kp BSLH
+                &kp A &kp R &hm LALT S &hm LGUI T &kp G      	        &kp M &hm RGUI N &hm RALT E &kp I &kp O
+                &kp Z &kp X &kp C &kp D &kp V				            &kp K &kp H &kp COMMA &kp DOT &kp BSLH
                     &mt LC(LS(LALT)) SPC &sk LSHIFT  				    &sk RCTRL &to L_SYM
             >;
         };
 
         symbols {
             bindings = <
-                &kp ESC &kp ATSN  &kp HASH &kp DOLLAR &kp PERCENT		&kp LT &kp LBRC &kp RBRC &kp GT &kp BSPC 
+                &kp ESC &kp AT &kp HASH &kp DLLR &kp PRCNT      		&kp LT &kp LBRC &kp RBRC &kp GT &kp BSPC
                 &kp TAB &kp EQUAL &kp GRAVE &kp DQT &kp SQT             &kp COLON &kp LPAR &kp RPAR &kp PIPE &kp ENTER
-                &kp TILDE &kp CARET &kp AMPS &kp PLUS &kp ASTRK 	    &kp SEMI &kp LBKT &kp RBKT &kp BSLH &to 2
+                &kp TILDE &kp CARET &kp AMPS &kp PLUS &kp STAR 	        &kp SEMI &kp LBKT &kp RBKT &kp BSLH &to 2
                                      &to L_DEFAULT &sk LSHIFT           &sk RALT &to L_NUM 
             >;
         };
@@ -75,7 +75,7 @@
                 &trans &none &none &none &none    			            &none &none &kp UP &none &kp BSPC
                 &trans &none &none &none &none 			                &none &kp LEFT &kp DOWN &kp RIGHT &kp ENTER
                 &none &none &none &none &none    			            &none &none &none &none &none
-                                  &to L_DEFAULT &trans                  &trans &to L_SYM
+                            &to L_DEFAULT &trans                        &trans &to L_SYM
             >;
         };	
     };
