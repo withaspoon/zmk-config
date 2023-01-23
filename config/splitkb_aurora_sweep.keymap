@@ -21,31 +21,12 @@
 
 / {
     behaviors {
-        hm_l: homerow_mods {
+        hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
             tapping-term-ms = <300>;
             quick-tap-ms = <250>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-            // hold-trigger-key-positions = <3 4 5 10 11 12 13 14>;
-        };
-        hm_r: homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
-            #binding-cells = <2>;
-            tapping-term-ms = <300>;
-            quick-tap-ms = <250>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
-        td: tapdance {
-            compatible = "zmk,behavior-hold-tap";
-            label = "TAPDANCE";
-            #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
@@ -54,69 +35,10 @@
     keymap {
         compatible = "zmk,keymap";
 
-        /*
-
-ORDER:
-
-_ = default
-' = sym
-: = default
-( = sym
-) = sym
-{ = sym
-} = sym
-? = sym
-& = sym
-| = sym
-, = default
-; = default
-. = default
-=
-> = sym
-< = sym
-/
-- = default
-[ = sym
-] = sym
-` = sym
-$ = sym
-+
-!
-* = sym
-" = sym
-\
-@ = sym
-# = sym
-^ = sym
-% = sym
-~ = sym
-å
-ä
-ö
-
-            Q W F P B    J L U Y ⌫
-            A R S T G    M N E I O
-            Z X C D V    K H . , -
-                             : ; _
-
-            ⎋ # @ $ %    < { } > ⌫
-            ⇥ = ` " '    ? ( ) | ↩
-            ~ ^ & Å Ä    Ö [ ] / ②
-
-            ⎋            + 1 2 3 ⌫
-            ⇥   \ !      * 4 5 6 ↩
-                         0 7 8 9 ②
-
-            ⎋                ↑   ⌫
-            ⇥              ← ↓ → ↩
-                                  
-
-        */
-
         default_layer {
             bindings = <
             &kp Q &kp W &kp F &kp P &kp B                                                   &kp J &kp L &kp U &kp Y &kp BSPC
-            &kp A &hm_l LCTRL R &hm_l LALT S &hm_l LGUI T &kp G                             &kp M &hm_r RGUI N &hm_r RALT E &hm_r RCTRL I &kp O
+            &kp A &hm LCTRL R &hm LALT S &hm LGUI T &kp G                             &kp M &hm RGUI N &hm RALT E &hm RCTRL I &kp O
             &kp Z &kp X &kp C &kp D &kp V                                                   &kp K &kp H &kp SV_DOT &kp SV_COMMA &kp SV_MINUS
                 &mt LC(LS(LALT)) SPC &sk LSHIFT                                             &key_repeat &to L_SYM
             >;
