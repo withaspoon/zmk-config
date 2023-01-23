@@ -39,24 +39,24 @@
             bindings = <
             &kp Q &kp W &kp F &kp P &kp B                                                   &kp J &kp L &kp U &kp Y &kp BSPC
             &kp A &hm LCTRL R &hm LALT S &hm LGUI T &kp G                             &kp M &hm RGUI N &hm RALT E &hm RCTRL I &kp O
-            &kp Z &kp X &kp C &kp D &kp V                                                   &kp K &kp H &kp SV_DOT &kp SV_COMMA &kp SV_MINUS
+            &kp Z &kp X &kp C &kp D &kp V                                                   &kp K &kp H &kp DOT &kp COMMA &kp MINUS
                 &mt LC(LS(LALT)) SPC &sk LSHIFT                                             &key_repeat &to L_SYM
             >;
         };
 
         symbols {
             bindings = <
-            &kp ESC &kp SV_HASH &kp SV_AT &kp SV_DLLR &kp SV_PRCNT                          &kp SV_LT &kp SV_LBRC &kp SV_RBRC &kp SV_GT &kp BSPC
-            &kp TAB &kp SV_EQUAL &kp SV_GRAVE &kp SV_DQT &kp SV_SQT                         &kp SV_QMARK &kp SV_LPAR &kp SV_RPAR &kp SV_PIPE &kp ENTER
-            &kp SV_TILDE &kp SV_CARET &kp SV_AMPS &kp SV_A_RING &kp SV_A_UMLAUT             &kp SV_O_UMLAUT &kp SV_LBKT &kp SV_RBKT &kp SV_SLASH &to L_NAV
+            &kp ESC &kp HASH &kp AT &kp DLLR &kp PRCNT                          &kp LT &kp LBRC &kp RBRC &kp GT &kp BSPC
+            &kp TAB &kp EQUAL &kp GRAVE &kp DQT &kp SQT                         &kp QMARK &kp LPAR &kp RPAR &kp PIPE &kp ENTER
+            &kp TILDE &kp CARET &kp AMPS &none &none             &none &kp LBKT &kp RBKT &kp SLASH &to L_NAV
                                     &to L_DEFAULT &sk LSHIFT                                &key_repeat &to L_NUM
             >;
         };
 
         numbers {
             bindings = <
-            &kp ESC &none &none &none &none                                                 &kp SV_PLUS &kp N1 &kp N2 &kp N3 &kp BSPC
-            &kp TAB &none &kp SV_BSLH &kp SV_EXCL &none                                     &kp SV_STAR &kp N4 &kp N5 &kp N6 &kp ENTER
+            &kp ESC &none &none &none &none                                                 &kp PLUS &kp N1 &kp N2 &kp N3 &kp BSPC
+            &kp TAB &none &kp BSLH &kp EXCL &none                                     &kp STAR &kp N4 &kp N5 &kp N6 &kp ENTER
             &none &none &none &none &none                                                   &kp N0 &kp N7 &kp N8 &kp N9 &to L_NAV
                     &to L_DEFAULT &sk LSHIFT                                                &key_repeat &to L_NUM
             >;
