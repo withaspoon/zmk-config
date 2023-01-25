@@ -14,6 +14,25 @@
 #define L_NUM 2
 #define L_NAV 3
 
+#define MOD_MORPH_MASKED(NAME, KEY, MOD_KEY) \
+  mm_##NAME: mm_##NAME { \
+    compatible = "zmk,behavior-mod-morph"; \
+    label = #NAME; \
+    #binding-cells = <0>; \
+    bindings = <&kp KEY>, <&kp MOD_KEY>; \
+    mods = <(MOD_LSFT|MOD_RSFT)>; \
+    keep-mods = <(MOD_LSFT|MOD_RSFT)>; \
+  };
+
+#define MOD_MORPH(NAME, KEY, MOD_KEY) \
+  mm_##NAME: mm_##NAME { \
+    compatible = "zmk,behavior-mod-morph"; \
+    label = #NAME; \
+    #binding-cells = <0>; \
+    bindings = <&kp KEY>, <&kp MOD_KEY>; \
+    mods = <(MOD_LSFT|MOD_RSFT)>; \
+  };
+
 &mt {
     flavor = "tap-preferred";
     tapping_term_ms = <200>;
@@ -30,7 +49,21 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
+
+        MOD_MORPH(semicolon, COMMA, SEMICOLON);
+        MOD_MORPH(dot, DOT, COLON);
     };
+
+    /*
+
+    å = Hold down the Option key and type an a.
+    Å = Hold down the Option and Shift keys and type an a.
+    ä = Hold the Option key and type a u, release the keys, and type an a.
+    Ä = Hold the Option key and type a u, release the keys, hold down the Shift key and type an a.
+    ö = Hold the Option key and type a u, release the keys, and type an o.
+    Ö = Hold the Option key and type a u, release the keys, hold down the Shift key and type an o.
+
+    */
 
     keymap {
         compatible = "zmk,keymap";
@@ -39,7 +72,7 @@
             bindings = <
             &kp Q &kp W &kp F &kp P &kp B                                                   &kp J &kp L &kp U &kp Y &kp BSPC
             &kp A &hm LCTRL R &hm LALT S &hm LGUI T &kp G                             &kp M &hm RGUI N &hm RALT E &hm RCTRL I &kp O
-            &kp Z &kp X &kp C &kp D &kp V                                                   &kp K &kp H &kp DOT &kp COMMA &kp MINUS
+            &kp Z &kp X &kp C &kp D &kp V                                                   &kp K &kp H &mm_semicolon &mm_dot &kp MINUS
                 &mt LC(LS(LALT)) SPC &sk LSHIFT                                             &key_repeat &to L_SYM
             >;
         };
@@ -48,8 +81,8 @@
             bindings = <
             &kp ESC &kp HASH &kp AT &kp DLLR &kp PRCNT                          &kp LT &kp LBRC &kp RBRC &kp GT &kp BSPC
             &kp TAB &kp EQUAL &kp GRAVE &kp DQT &kp SQT                         &kp QMARK &kp LPAR &kp RPAR &kp PIPE &kp ENTER
-            &kp TILDE &kp CARET &kp AMPS &none &none             &none &kp LBKT &kp RBKT &kp SLASH &to L_NAV
-                                    &to L_DEFAULT &sk LSHIFT                                &key_repeat &to L_NUM
+            &kp TILDE &kp CARET &kp AMPS &none &none                            &none &kp LBKT &kp RBKT &kp SLASH &to L_NAV
+                            &to L_DEFAULT &sk LSHIFT                                &key_repeat &to L_NUM
             >;
         };
 
