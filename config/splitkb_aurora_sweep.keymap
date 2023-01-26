@@ -9,10 +9,22 @@
 #include <dt-bindings/zmk/bt.h>
 #include "keys_sv.h"
 
-#define L_DEFAULT 0
+#define L_ZERO 0
 #define L_SYM 1
 #define L_NUM 2
 #define L_NAV 3
+
+#define EQ EQUAL
+
+#define MEH LC(LS(LALT))
+
+#define HLCTRL(KEY) &hml LCTRL KEY
+#define HLALT(KEY) &hml LALT KEY
+#define HLGUI(KEY) &hml LGUI KEY
+
+#define HRCTRL(KEY) &hml RCTRL KEY
+#define HRALT(KEY) &hml RALT KEY
+#define HRGUI(KEY) &hml RGUI KEY
 
 #define MOD_MORPH_MASKED(NAME, KEY, MOD_KEY) \
   mm_##NAME: mm_##NAME { \
@@ -40,9 +52,19 @@
 
 / {
     behaviors {
-        hm: homerow_mods {
+        hml: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
+            label = "HOMEROW_MODS_LEFT";
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            quick-tap-ms = <250>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+        
+        hmr: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS_RIGHT";
             #binding-cells = <2>;
             tapping-term-ms = <300>;
             quick-tap-ms = <250>;
@@ -50,57 +72,62 @@
             bindings = <&kp>, <&kp>;
         };
 
-        MOD_MORPH(semicolon, COMMA, SEMICOLON)
+        MOD_MORPH(semi, COMMA, SEMICOLON)
         MOD_MORPH(dot, DOT, COLON)
     };
-
-    /*
-
-    å = Hold down the Option key and type an a.
-    Å = Hold down the Option and Shift keys and type an a.
-    ä = Hold the Option key and type a u, release the keys, and type an a.
-    Ä = Hold the Option key and type a u, release the keys, hold down the Shift key and type an a.
-    ö = Hold the Option key and type a u, release the keys, and type an o.
-    Ö = Hold the Option key and type a u, release the keys, hold down the Shift key and type an o.
-
-    */
 
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
-            &kp Q &kp W &kp F &kp P &kp B                                                   &kp J &kp L &kp U &kp Y &kp BSPC
-            &kp A &hm LCTRL R &hm LALT S &hm LGUI T &kp G                                   &kp M &hm RGUI N &hm RALT E &hm RCTRL I &kp O
-            &kp Z &kp X &kp C &kp D &kp V                                                   &kp K &kp H &mm_semicolon &mm_dot &kp MINUS
-                &mt LC(LS(LALT)) SPC &sk LSHIFT                                             &key_repeat &to L_SYM
+            //  pos 0        pos 1        pos 2        pos 3        pos 4      |    pos 5       pos 6        pos 7        pos 8        pos 9
+            &kp Q            &kp W        &kp F        &kp P        &kp B           &kp J       &kp L        &kp U        &kp Y        &kp BSPC
+            //  pos 10       pos 11       pos 12       pos 13       pos 14     |    pos 15      pos 16       pos 17       pos 18       pos 19 
+            &kp A            HLCTRL(R)    HLALT(S)     HLGUI(T)     &kp G           &kp M       HRGUI(N)     HRALT(E)     HRCTRL(I)    &kp O
+            //  pos 20       pos 21       pos 22       pos 23       pos 24     |    pos 25      pos 26       pos 27       pos 28       pos 29 
+            &kp Z            &kp X        &kp C        &kp D        &kp V           &kp K       &kp H        &mm_semi     &mm_dot      &kp MINUS
+            //                                         pos 30       pos 31     |    pos 32      pos 33
+                                                       &mt MEH SPC  &key_repeat     &sk RSHIFT  &to L_SYM
             >;
         };
 
         symbols {
             bindings = <
-            &kp ESC &kp HASH &kp AT &kp DLLR &kp PRCNT                                      &kp LT &kp LBRC &kp RBRC &kp GT &kp BSPC
-            &kp TAB &kp EQUAL &kp GRAVE &kp DQT &kp SQT                                     &kp QMARK &kp LPAR &kp RPAR &kp PIPE &kp ENTER
-            &kp TILDE &kp CARET &kp AMPS &none &none                                        &none &kp LBKT &kp RBKT &kp SLASH &to L_NAV
-                            &to L_DEFAULT &sk LSHIFT                                        &key_repeat &to L_NUM
+            //  pos 0        pos 1        pos 2        pos 3        pos 4      |    pos 5       pos 6        pos 7        pos 8        pos 9
+            &kp ESC          &kp HASH     &kp AT       &kp DLLR     &kp PRCNT       &kp LT      &kp LBRC     &kp RBRC     &kp GT       &kp BSPC
+            //  pos 10       pos 11       pos 12       pos 13       pos 14     |    pos 15      pos 16       pos 17       pos 18       pos 19 
+            &kp TAB          HLCTRL(EQ)   HLALT(GRAVE) HLGUI(DQT)   &kp SQT         &kp QMARK   HRGUI(LPAR)  HRALT(RPAR)  HRCTRL(PIPE) &kp ENTER
+            //  pos 20       pos 21       pos 22       pos 23       pos 24     |    pos 25      pos 26       pos 27       pos 28       pos 29 
+            &kp TILDE        &kp CARET    &kp AMPS     &none        &none           &none       &kp LBKT     &kp RBKT     &kp SLASH    &to L_NAV
+            //                                         pos 30       pos 31     |    pos 32      pos 33
+                                                       &to L_ZERO   &key_repeat     &sk RSHIFT  &to L_NUM
             >;
         };
 
         numbers {
             bindings = <
-            &kp ESC &none &none &none &none                                                 &kp PLUS &kp N1 &kp N2 &kp N3 &kp BSPC
-            &kp TAB &none &kp BSLH &kp EXCL &none                                           &kp STAR &kp N4 &kp N5 &kp N6 &kp ENTER
-            &none &none &none &none &none                                                   &kp N0 &kp N7 &kp N8 &kp N9 &to L_NAV
-                    &to L_DEFAULT &sk LSHIFT                                                &key_repeat &to L_NUM
+            //  pos 0        pos 1        pos 2        pos 3        pos 4      |    pos 5       pos 6        pos 7        pos 8        pos 9
+            &kp ESC          &none        &none        &none        &none           &kp PLUS    &kp N1       &kp N2       &kp N3       &kp BSPC
+            //  pos 10       pos 11       pos 12       pos 13       pos 14     |    pos 15      pos 16       pos 17       pos 18       pos 19 
+            &kp TAB          &sk LCTRL    HLALT(BSLH)  HLGUI(EXCL)   &none          &kp STAR    HRGUI(N4)    HRALT(N5)    HRCTRL(N6)   &kp ENTER
+            //  pos 20       pos 21       pos 22       pos 23       pos 24     |    pos 25      pos 26       pos 27       pos 28       pos 29 
+            &none            &none        &none        &none        &none           &kp N0      &kp N7       &kp N8       &kp N9       &to L_NAV
+            //                                         pos 30       pos 31     |    pos 32      pos 33
+                                                       &to L_ZERO   &key_repeat     &sk RSHIFT  &to L_NUM
             >;
         };
 
         navigation {
             bindings = <
-            &kp ESC &none &none &none &none                                                 &none &none &kp UP &none &kp BSPC
-            &kp TAB &none &none &none &none                                                 &none &kp LEFT &kp DOWN &kp RIGHT &kp ENTER
-            &none &none &none &none &none                                                   &none &none &none &none &none
-                        &to L_DEFAULT &sk LSHIFT                                            &key_repeat &to L_SYM
+            //  pos 0        pos 1        pos 2        pos 3        pos 4      |    pos 5       pos 6        pos 7        pos 8        pos 9
+            &kp ESC          &none        &none        &none        &none           &none       &none        &kp UP       &none        &kp BSPC
+            //  pos 10       pos 11       pos 12       pos 13       pos 14     |    pos 15      pos 16       pos 17       pos 18       pos 19 
+            &kp TAB          &none        &none        &none        &none           &none       &kp LEFT     &kp DOWN     &kp RIGHT    &kp ENTER
+            //  pos 20       pos 21       pos 22       pos 23       pos 24     |    pos 25      pos 26       pos 27       pos 28       pos 29 
+            &none            &none        &none        &none        &none           &none       &none        &none        &none        &none
+            //                                         pos 30       pos 31     |    pos 32      pos 33
+                                                       &to L_ZERO   &key_repeat     &sk RSHIFT  &to L_SYM
             >;
         };
     };
