@@ -90,7 +90,7 @@
             //  pos 20       pos 21       pos 22       pos 23       pos 24     |    pos 25      pos 26       pos 27       pos 28       pos 29 
             &kp Z            &kp X        &kp C        &kp D        &kp V           &kp K       &kp H        &mm_semi     &mm_dot      &kp MINUS
             //                                         pos 30       pos 31     |    pos 32      pos 33
-                                                       &mt MEH SPC  &key_repeat     &sk RSHIFT  &mo L_SYM
+                                                       &mt MEH SPC  &sk RSHIFT      &mo L_NUM   &mo L_SYM
             >;
         };
 
@@ -101,7 +101,7 @@
             //  pos 10       pos 11       pos 12       pos 13       pos 14     |    pos 15      pos 16       pos 17       pos 18       pos 19 
             &kp TAB          HLCTRL(EQ)   HLALT(GRAVE) HLGUI(DQT)   &kp SQT         &kp QMARK   HRGUI(LPAR)  HRALT(RPAR)  HRCTRL(PIPE) &kp ENTER
             //  pos 20       pos 21       pos 22       pos 23       pos 24     |    pos 25      pos 26       pos 27       pos 28       pos 29 
-            &kp TILDE        &kp CARET    &kp AMPS     &none        &none           &none       &kp LBKT     &kp RBKT     &kp SLASH    &to L_NUM
+            &kp TILDE        &kp CARET    &kp AMPS     &kp PLUS     &kp STAR        &kp EXCL    &kp LBKT     &kp RBKT     &kp SLASH    &kp BSLH
             //                                         pos 30       pos 31     |    pos 32      pos 33
                                                        &trans       &trans          &trans      &none
             >;
@@ -110,9 +110,9 @@
         numbers {
             bindings = <
             //  pos 0        pos 1        pos 2        pos 3        pos 4      |    pos 5       pos 6        pos 7        pos 8        pos 9
-            &kp ESC          &none        &none        &none        &none           &kp PLUS    &kp N1       &kp N2       &kp N3       &kp BSPC
+            &none            &none        &none        &none        &none           &none       &kp N1       &kp N2       &kp N3       &none
             //  pos 10       pos 11       pos 12       pos 13       pos 14     |    pos 15      pos 16       pos 17       pos 18       pos 19 
-            &kp TAB          &sk LCTRL    HLALT(BSLH)  HLGUI(EXCL)   &none          &kp STAR    HRGUI(N4)    HRALT(N5)    HRCTRL(N6)   &kp ENTER
+            &none            &sk LCTRL    &sk LALT     &sk LGUI     &none           &none       HRGUI(N4)    HRALT(N5)    HRCTRL(N6)   &none
             //  pos 20       pos 21       pos 22       pos 23       pos 24     |    pos 25      pos 26       pos 27       pos 28       pos 29 
             &none            &none        &none        &none        &none           &kp N0      &kp N7       &kp N8       &kp N9       &to L_NAV
             //                                         pos 30       pos 31     |    pos 32      pos 33
