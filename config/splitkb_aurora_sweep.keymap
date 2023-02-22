@@ -23,9 +23,9 @@
 #define HLALT(KEY) &hml LALT KEY
 #define HLGUI(KEY) &hml LGUI KEY
 
-#define HRCTRL(KEY) &hml RCTRL KEY
-#define HRALT(KEY) &hml RALT KEY
-#define HRGUI(KEY) &hml RGUI KEY
+#define HRCTRL(KEY) &hmr RCTRL KEY
+#define HRALT(KEY) &hmr RALT KEY
+#define HRGUI(KEY) &hmr RGUI KEY
 
 #define MOD_MORPH_MASKED(NAME, KEY, MOD_KEY) \
   mm_##NAME: mm_##NAME { \
@@ -62,22 +62,22 @@
     };
 
     behaviors {
-      hml: homerow_mods {
+      hml: homerow_mods_left {
         compatible = "zmk,behavior-hold-tap";
         label = "HOMEROW_MODS_LEFT";
         #binding-cells = <2>;
-        tapping-term-ms = <100>;
-        quick-tap-ms = <200>;
-        flavor = "tap-preferred"; // tap-unless-interrupted?
+        tapping-term-ms = <300>;
+        quick-tap-ms = <250>;
+        flavor = "tap-preferred";
         bindings = <&kp>, <&kp>;
       };
-        
-      hmr: homerow_mods {
+    
+      hmr: homerow_mods_right {
         compatible = "zmk,behavior-hold-tap";
         label = "HOMEROW_MODS_RIGHT";
         #binding-cells = <2>;
-        tapping-term-ms = <100>;
-        quick-tap-ms = <200>;
+        tapping-term-ms = <300>;
+        quick-tap-ms = <250>;
         flavor = "tap-preferred";
         
         bindings = <&kp>, <&kp>;
