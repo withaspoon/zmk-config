@@ -58,8 +58,8 @@
         timeout-ms = <30>;
         key-positions = <0 1 2 3>;
         bindings = <&to L_SYS>;
-      }
-    }
+      };
+    };
 
     behaviors {
       hml: homerow_mods {
