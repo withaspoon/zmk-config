@@ -7,13 +7,17 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-#include "keys_sv.h"
+
+#define HOST_OS 2  // set to 2 for macOS/Windows-Alt-Codes, default is 0 (Windows)
+
+#include "../zmk-nodefree-config/helper.h"
+#include "../zmk-nodefree-config/international_chars/swedish.dtsi"
 
 #define L_ZERO 0
 #define L_SYM 1
 #define L_NUM 2
 #define L_NAV 3
-#define L_SYS 4
+#define L_BT 4
 #define L_QWERTY 5
 
 #define EQ EQUAL
@@ -52,13 +56,32 @@
   tapping_term_ms = <200>;
 };
 
+// ZMK_UNICODE_PAIR(sv_ae,   N0, N0,  E, N4,   N0, N0,  C, N4)
+// ZMK_UNICODE_PAIR(sv_ao,   N0, N0,  E, N5,   N0, N0,  C, N5)
+// ZMK_UNICODE_PAIR(sv_oe,   N0, N0,  F, N6,   N0, N0,  D, N6)
+
 / {
     combos {
       compatible = "zmk,combos";
       combo_sys {
         timeout-ms = <30>;
         key-positions = <0 1 2 3>;
-        bindings = <&to L_SYS>;
+        bindings = <&to l_bt>;
+      };
+      combo_aring {
+        timeout-ms = <30>;
+        key-positions = <3 4>;
+        bindings = <&sv_ae>;
+      };
+      combo_auml {
+        timeout-ms = <30>;
+        key-positions = <23 24>;
+        bindings = <&sv_ao>;
+      };
+      combo_ouml {
+        timeout-ms = <30>;
+        key-positions = <25 26>;
+        bindings = <&sv_oe>;
       };
     };
 
@@ -126,7 +149,7 @@
         //  pos 20       pos 21       pos 22       pos 23       pos 24     |    pos 25      pos 26       pos 27       pos 28       pos 29 
         &none            &none        &none        &none        &none           &kp N0      &kp N7       &kp N8       &kp N9       &to L_NAV
         //                                         pos 30       pos 31     |    pos 32      pos 33
-                                                   &trans       &trans          &trans      &to L_ZERO
+                                                   &trans       &trans          &trans      &none
         >;
       };
 
@@ -143,7 +166,7 @@
         >;
       };
 
-      system {
+      bluetooth {
         bindings = <
         //  pos 0        pos 1        pos 2        pos 3        pos 4      |    pos 5       pos 6        pos 7        pos 8        pos 9
         &bt BT_PRV	     &bt BT_NXT   &none        &none        &none           &none       &none        &none        &none        &none
