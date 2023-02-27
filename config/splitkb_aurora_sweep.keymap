@@ -66,7 +66,7 @@
       combo_sys {
         timeout-ms = <30>;
         key-positions = <0 1 2 3>;
-        bindings = <&to l_bt>;
+        bindings = <&to L_BT>;
       };
       combo_aring {
         timeout-ms = <30>;
