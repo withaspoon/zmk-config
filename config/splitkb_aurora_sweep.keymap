@@ -22,7 +22,7 @@
 
 #define EQ EQUAL
 
-#define HYPER(key) LS(LC(LA(LG(key))))
+#define HYPER LS(LC(LA(LGUI)))
 
 #define HLCTRL(KEY) &hml LCTRL KEY
 #define HLALT(KEY) &hml LALT KEY
