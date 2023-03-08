@@ -22,7 +22,7 @@
 
 #define EQ EQUAL
 
-#define MEH LC(LS(LALT))
+#define HYPER(key) LS(LC(LA(LG(key))))
 
 #define HLCTRL(KEY) &hml LCTRL KEY
 #define HLALT(KEY) &hml LALT KEY
@@ -117,9 +117,9 @@
       default_layer {
         bindings = <
         //  pos 0        pos 1        pos 2        pos 3        pos 4      |    pos 5       pos 6        pos 7        pos 8        pos 9
-        &kp Q            &kp W        &kp F        &kp P        &kp B           &kp J       &kp L        &kp U        &kp Y        &kp BSPC
+        &lt L_NAV Q      &kp W        &kp F        &kp P        &kp B           &kp J       &kp L        &kp U        &kp Y        &kp BSPC
         //  pos 10       pos 11       pos 12       pos 13       pos 14     |    pos 15      pos 16       pos 17       pos 18       pos 19 
-        &mt MEH A        HLCTRL(R)    HLALT(S)     HLGUI(T)     &kp G           &kp M       HRGUI(N)     HRALT(E)     HRCTRL(I)    &kp O
+        &mt HYPER A      HLCTRL(R)    HLALT(S)     HLGUI(T)     &kp G           &kp M       HRGUI(N)     HRALT(E)     HRCTRL(I)    &kp O
         //  pos 20       pos 21       pos 22       pos 23       pos 24     |    pos 25      pos 26       pos 27       pos 28       pos 29 
         &lt L_NUM Z      &kp X        &kp C        &kp D        &kp V           &kp K       &kp H        &mm_semi     &mm_dot      &kp MINUS
         //                                         pos 30       pos 31     |    pos 32      pos 33
