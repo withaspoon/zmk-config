@@ -112,11 +112,11 @@
       default_layer {
         bindings = <
         //  pos 0        pos 1        pos 2        pos 3        pos 4      |    pos 5       pos 6        pos 7        pos 8        pos 9
-        &lt L_NAV Q      &kp W        &kp F        &kp P        &kp B           &kp J       &kp L        &kp U        &kp Y        &kp BSPC
+        &lt L_NAV Q      &kp W        &kp F        &kp P        &mt HYPER B     &kp J       &kp L        &kp U        &kp Y        &kp BSPC
         //  pos 10       pos 11       pos 12       pos 13       pos 14     |    pos 15      pos 16       pos 17       pos 18       pos 19 
-        &mt HYPER A      HLCTRL(R)    HLALT(S)     HLGUI(T)     &kp G           &kp M       HRGUI(N)     HRALT(E)     HRCTRL(I)    &kp O
+        &kp A            &kp R        &kp S        &kp T        &kp G           &kp M       &kb N        &kp E        &kp I        &kp O
         //  pos 20       pos 21       pos 22       pos 23       pos 24     |    pos 25      pos 26       pos 27       pos 28       pos 29 
-        &lt L_NUM Z      &kp X        &kp C        &kp D        &kp V           &kp K       &kp H        &mm_semi     &mm_dot      &kp MINUS
+        &lt L_NUM Z      &kp X        &kp C        &kp D        HLGUI(V)        HRGUI(K)    &kp H        &mm_semi     &mm_dot      &kp MINUS
         //                                         pos 30       pos 31     |    pos 32      pos 33
                                                    HRALT(SPC)   &kp LSHIFT      &kp RCTRL   &mo L_SYM
         >;
@@ -127,9 +127,9 @@
         //  pos 0        pos 1        pos 2        pos 3        pos 4      |    pos 5       pos 6        pos 7        pos 8        pos 9
         &kp ESC          &kp HASH     &kp AT       &kp DLLR     &kp PRCNT       &kp LT      &kp LBRC     &kp RBRC     &kp GT       &kp DEL
         //  pos 10       pos 11       pos 12       pos 13       pos 14     |    pos 15      pos 16       pos 17       pos 18       pos 19 
-        &kp TAB          HLCTRL(EQ)   HLALT(GRAVE) HLGUI(DQT)   &kp SQT         &kp SLASH   HRGUI(LPAR)  HRALT(RPAR)  HRCTRL(PIPE) &kp ENTER
+        &kp TAB          &kp EQ       &kp GRAVE    &kp DQT      &kp SQT         &kp SLASH   &kp LPAR     &kp RPAR     &kp PIPE     &kp ENTER
         //  pos 20       pos 21       pos 22       pos 23       pos 24     |    pos 25      pos 26       pos 27       pos 28       pos 29 
-        &kp TILDE        &kp CARET    &kp AMPS     &kp PLUS     &kp STAR        &kp QMARK   &kp LBKT     &kp RBKT     &kp EXCL   &kp BSLH
+        &kp TILDE        &kp CARET    &kp AMPS     &kp PLUS     HLGUI(STAR)     HRGUI(QMARK) &kp LBKT     &kp RBKT     &kp EXCL     &kp BSLH
         //                                         pos 30       pos 31     |    pos 32      pos 33
                                                    &trans       &trans          &trans      &none
         >;
@@ -140,9 +140,9 @@
         //  pos 0        pos 1        pos 2        pos 3        pos 4      |    pos 5       pos 6        pos 7        pos 8        pos 9
         &none            &none        &none        &none        &none           &none       &kp N1       &kp N2       &kp N3       &kp RG(BSPC)
         //  pos 10       pos 11       pos 12       pos 13       pos 14     |    pos 15      pos 16       pos 17       pos 18       pos 19 
-        &none            &sk LCTRL    &sk LALT     &sk LGUI     &none           &none       HRGUI(N4)    HRALT(N5)    HRCTRL(N6)   &kp ENTER
+        &none            &none        &none        &none        &none           &none       &kp N4       &kp N5       &kp N6       &kp ENTER
         //  pos 20       pos 21       pos 22       pos 23       pos 24     |    pos 25      pos 26       pos 27       pos 28       pos 29 
-        &none            &none        &none        &none        &none           &kp N0      &kp N7       &kp N8       &kp N9       &to L_NAV
+        &none            &none        &none        &none        &sk LGUI        &kp N0      &kp N7       &kp N8       &kp N9       &to L_NAV
         //                                         pos 30       pos 31     |    pos 32      pos 33
                                                    &trans       &trans          &trans      &none
         >;
@@ -153,9 +153,9 @@
         //  pos 0        pos 1        pos 2        pos 3        pos 4      |    pos 5       pos 6        pos 7        pos 8        pos 9
         &kp ESC          &none        &none        &kp C_VOL_DN &kp C_VOL_UP    &kp C_PP    &kp C_NEXT   &kp UP       &none        &kp BSPC
         //  pos 10       pos 11       pos 12       pos 13       pos 14     |    pos 15      pos 16       pos 17       pos 18       pos 19 
-        &kp TAB          &sk LCTRL    &sk LALT     &sk LGUI     &none           &none       &kp LEFT     &kp DOWN     &kp RIGHT    &kp ENTER
+        &kp TAB          &none        &none        &none        &none           &none       &kp LEFT     &kp DOWN     &kp RIGHT    &kp ENTER
         //  pos 20       pos 21       pos 22       pos 23       pos 24     |    pos 25      pos 26       pos 27       pos 28       pos 29 
-        &none            &none        &none        &none        &none           &none       &none        &none        &none        &none
+        &none            &none        &none        &none        &sk LGUI        &none       &none        &none        &none        &none
         //                                         pos 30       pos 31     |    pos 32      pos 33
                                                    &trans       &trans          &trans      &to L_ZERO
         >;
