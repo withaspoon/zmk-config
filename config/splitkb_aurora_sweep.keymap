@@ -63,21 +63,21 @@
         key-positions = <0 1 2 3>;
         bindings = <&to L_BT>;
       };
-      combo_aring {
-        timeout-ms = <30>;
-        key-positions = <3 4>;
-        bindings = <&sv_ae>;
-      };
-      combo_auml {
-        timeout-ms = <30>;
-        key-positions = <23 24>;
-        bindings = <&sv_ao>;
-      };
-      combo_ouml {
-        timeout-ms = <30>;
-        key-positions = <25 26>;
-        bindings = <&sv_oe>;
-      };
+      // combo_aring {
+      //   timeout-ms = <30>;
+      //   key-positions = <3 4>;
+      //   bindings = <&sv_ae>;
+      // };
+      // combo_auml {
+      //   timeout-ms = <30>;
+      //   key-positions = <23 24>;
+      //   bindings = <&sv_ao>;
+      // };
+      // combo_ouml {
+      //   timeout-ms = <30>;
+      //   key-positions = <25 26>;
+      //   bindings = <&sv_oe>;
+      // };
     };
 
     behaviors {
