@@ -157,7 +157,7 @@
         //  pos 20       pos 21       pos 22       pos 23       pos 24     |    pos 25      pos 26       pos 27       pos 28       pos 29 
         &none            &none        &none        &none        &none           &none       &none        &none        &none        &none
         //                                         pos 30       pos 31     |    pos 32      pos 33
-                                                   &trans       &trans          &trans      &to L_ZERO
+                                                   &trans       &trans          &trans      &trans
         >;
       };
 
