@@ -112,11 +112,11 @@
       default_layer {
         bindings = <
         //  pos 0        pos 1        pos 2        pos 3        pos 4      |    pos 5       pos 6        pos 7        pos 8        pos 9
-        &lt L_NAV Q      &kp W        &kp F        &kp P        &kp B           &kp J       &kp L        &kp U        &kp Y        &kp BSPC
+        &lt L_NUM Q      &kp W        &kp F        &kp P        &kp B           &kp J       &kp L        &kp U        &kp Y        &kp BSPC
         //  pos 10       pos 11       pos 12       pos 13       pos 14     |    pos 15      pos 16       pos 17       pos 18       pos 19 
         &mt HYPER A      &kp R        &kp S        HLGUI(T)     &kp G           &kp M       HRGUI(N)     &kp E        &kp I        &kp O
         //  pos 20       pos 21       pos 22       pos 23       pos 24     |    pos 25      pos 26       pos 27       pos 28       pos 29 
-        &lt L_NUM Z      &kp X        &kp C        &kp D        &kp V           &kp K       &kp H        &mm_semi     &mm_dot      &kp MINUS
+        &lt L_NAV Z      &kp X        &kp C        &kp D        &kp V           &kp K       &kp H        &mm_semi     &mm_dot      &kp MINUS
         //                                         pos 30       pos 31     |    pos 32      pos 33
                                                    &mo L_SYM    &kp RCTRL       &kp LSHIFT  HRALT(SPC)  
         >;
