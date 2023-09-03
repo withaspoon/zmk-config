@@ -116,9 +116,9 @@
         //  pos 0        pos 1        pos 2        pos 3        pos 4      |    pos 5       pos 6        pos 7        pos 8        pos 9
         &lt L_NUM Q      &kp W        &kp F        &kp P        &kp B           &kp J       &kp L        &kp U        &kp Y        &kp BSPC
         //  pos 10       pos 11       pos 12       pos 13       pos 14     |    pos 15      pos 16       pos 17       pos 18       pos 19 
-        &mt HYPER A      &kp R        HLSHIFT(S)   HLGUI(T)     &kp G           &kp M       HRGUI(N)     HRSHIFT(E)   &kp I        &kp O
+        &mt L_NAV A      &kp R        HLSHIFT(S)   HLGUI(T)     &kp G           &kp M       HRGUI(N)     HRSHIFT(E)   &kp I        &kp O
         //  pos 20       pos 21       pos 22       pos 23       pos 24     |    pos 25      pos 26       pos 27       pos 28       pos 29 
-        &lt L_NAV Z      &kp X        &kp C        &kp D        &kp V           &kp K       &kp H        &mm_semi     &mm_dot      &kp MINUS
+        &lt HYPER Z      &kp X        &kp C        &kp D        &kp V           &kp K       &kp H        &mm_semi     &mm_dot      &kp MINUS
         //                                         pos 30       pos 31     |    pos 32      pos 33
                                                    &kp LCTRL    &kp LSHIFT      HRALT(SPC)  &mo L_SYM
         >;
@@ -129,7 +129,7 @@
         //  pos 0        pos 1        pos 2        pos 3        pos 4      |    pos 5       pos 6        pos 7        pos 8        pos 9
         &kp ESC          &kp HASH     &kp AT       &kp DLLR     &kp PRCNT       &kp LT      &kp LBRC     &kp RBRC     &kp GT       &kp DEL
         //  pos 10       pos 11       pos 12       pos 13       pos 14     |    pos 15      pos 16       pos 17       pos 18       pos 19 
-        &kp TAB          &kp EQ       &kp GRAVE    HLGUI(DQT)   &kp SQT         &kp SLASH   HRGUI(LPAR) &kp RPAR     &kp PIPE     &kp ENTER
+        &kp TAB          &kp EQ       &kp GRAVE    HLGUI(DQT)   &kp SQT         &kp SLASH   HRGUI(LPAR)  &kp RPAR     &kp PIPE     &kp ENTER
         //  pos 20       pos 21       pos 22       pos 23       pos 24     |    pos 25      pos 26       pos 27       pos 28       pos 29 
         &kp TILDE        &kp CARET    &kp AMPS     &kp PLUS     &kp STAR        &kp QMARK   &kp LBKT     &kp RBKT    &kp EXCL     &kp BSLH
         //                                         pos 30       pos 31     |    pos 32      pos 33
@@ -166,7 +166,7 @@
       bluetooth {
         bindings = <
         //  pos 0        pos 1        pos 2        pos 3        pos 4      |    pos 5       pos 6        pos 7        pos 8        pos 9
-        &bt BT_PRV	     &bt BT_NXT   &none        &none        &none           &none       &none        &none        &none        &none
+        &bt BT_SEL 0     &bt BT_SEL 1 &bt BT_SEL 3 &none        &none           &none       &none        &none        &none        &none
         //  pos 10       pos 11       pos 12       pos 13       pos 14     |    pos 15      pos 16       pos 17       pos 18       pos 19 
         &none            &none        &none        &none        &none           &none       &none        &none        &none        &none
         //  pos 20       pos 21       pos 22       pos 23       pos 24     |    pos 25      pos 26       pos 27       pos 28       pos 29 
